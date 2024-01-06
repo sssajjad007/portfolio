@@ -24,7 +24,7 @@ const Circle = ({ user, left, top, open, index, uri, radius, onGestureEvent, rot
 
       const halfRadius = radius / 2;
 
-      let leftInterpolateValue = interpolate(LeftValue.value, [0, 1, 2], [left, halfRadius * 2, 200]);
+      let leftInterpolateValue = interpolate(LeftValue.value, [0, 1, 2], [left, halfRadius * 2, 200-(open?100:0)]);
 
       let topInterpolateValue = interpolate(
          topValue.value,
@@ -103,12 +103,11 @@ const Circle = ({ user, left, top, open, index, uri, radius, onGestureEvent, rot
                   <Animated.Text numberOfLines={1} style={[styles.userNameStyle, nameAnimatedStyle]}>
                      {user.name}
                   </Animated.Text>
-                  <Animated.Text style={[styles.userExperience, nameAnimatedStyle]}>{user.role}</Animated.Text>
+                  {/* <Animated.Text style={[styles.userExperience, nameAnimatedStyle]}>{user.role}</Animated.Text> */}
                </View>
             </Animated.View>
             {selected && <Animated.View style={[styles.contentContainer, contentAnimatedStyle]} pointerEvents={'none'}>
-               <Animated.Text style={[styles.userExperience, nameAnimatedStyle]}>{user.role}</Animated.Text>
-
+               <Animated.Text style={[styles.userExperience, nameAnimatedStyle]}>{user.role}</Animated.Text>   
             </Animated.View>}
          </TouchableOpacity>
       </PanGestureHandler >

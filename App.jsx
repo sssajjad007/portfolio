@@ -25,7 +25,7 @@ import Circle from './components/Circle';
 import { ArrowDown, CloseIcon } from './components/icons';
 import CompanyCard from './components/CompanyCard';
 
-const { width, height } = Dimensions.get('screen');
+export const { width, height } = Dimensions.get('screen');
 
 if (Platform.OS === 'android') {
   StatusBar.setTranslucent(true);
@@ -34,7 +34,7 @@ if (Platform.OS === 'android') {
 
 const AnimatedPressable = Animated.createAnimatedComponent(Pressable);
 
-const RADIUS = 367;
+const RADIUS = width<600?367/2:367;
 const NUM_VIEWS = 9;
 const VIEW_SIZE = 56;
 const CENTER_POSITION = RADIUS * 2 - width;
@@ -72,7 +72,7 @@ const App = () => {
   }, []);
 
   const circleAnimatedStyle = useAnimatedStyle(() => {
-    const bottomPosition = Platform.OS === 'web' ? height - 350 : height - 200;
+    const bottomPosition = Platform.OS === 'web' ? height - RADIUS+(width<600?50:0) : height - 200;
     const leftPosition = Platform.OS === 'web' ? -100 : -CENTER_POSITION / 2;
     const topstyle = Platform.OS === 'web' ? -70 : -100;
     const widthPosition = Platform.OS === 'web' ? width + 100 : RADIUS * 2;
@@ -95,7 +95,7 @@ const App = () => {
       height: heightStyle,
       bottom: bottomStyle,
       top: topStyle,
-      left: leftStyle,
+      // left: leftStyle,
       borderRadius: borderRadius,
     };
   });
@@ -196,8 +196,8 @@ const App = () => {
             </AnimatedPressable>
 
             <View style={styles.container}>
-              <Text style={styles.companyText}>Company Details</Text>
-              <CompanyCard />
+              {/* <Text style={styles.companyText}>Company Details</Text>
+              <CompanyCard /> */}
 
               <Text style={[styles.commonTextStyle]}>Members</Text>
               <Animated.View style={[styles.circle, circleAnimatedStyle]}>
@@ -241,7 +241,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: 'red',
+    backgroundColor: '#0E1117',
   },
   SafeAreaViewStyle: {
     flex: 1,
@@ -283,7 +283,7 @@ const styles = StyleSheet.create({
     width: 100,
   },
   circle: {
-    botom: -100,
+    // bottom: -100,
     position: 'absolute',
     backgroundColor: '#102123',
     borderRadius: RADIUS,
