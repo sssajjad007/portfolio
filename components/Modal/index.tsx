@@ -9,9 +9,9 @@ import { AntDesign } from "@expo/vector-icons";
 import { styles } from "./styles";
 import { Pressable, Text, TouchableOpacity } from "react-native";
 import { BlurView } from "expo-blur";
-import { height } from "../../App";
 import { CloseIcon } from "../icons";
 import { LinearGradient } from "expo-linear-gradient";
+import { height } from "../../app/app";
 
 interface Props {
   openSignModal: boolean;

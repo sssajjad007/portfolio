@@ -1,6 +1,7 @@
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { width } from "../App";
+import { width } from "../app/app";
+
 
 export const ImageComponent = ({ images }: { images: string[] }) => {
   if (images.length === 0) return null;
