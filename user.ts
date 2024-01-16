@@ -1,4 +1,4 @@
-interface IUser {
+export interface IUser {
   id: number;
   name: string;
   role: string;
@@ -104,6 +104,13 @@ export const users: IUser[] = [
     role: "Delino",
     description: ``,
     uri: require("./assets/users/vendo.png"),
+    images: [
+      require("./assets/users/vendo1.jpg"),
+      require("./assets/users/vendo2.jpg"),
+      require("./assets/users/vendo3.jpg"),
+      require("./assets/users/vendo4.jpg"),
+      require("./assets/users/vendo5.jpg"),
+    ],
   },
   {
     id: 7,
