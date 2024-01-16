@@ -207,13 +207,13 @@ const App = () => {
   if (fontsLoaded) {
     return (
       <>
-        <PortalProvider>
-          <StatusBar barStyle="light-content" />
-          <GestureHandlerRootView
-            style={{
-              flex: 1,
-            }}
-          >
+        <StatusBar barStyle="light-content" />
+        <GestureHandlerRootView
+          style={{
+            flex: 1,
+          }}
+        >
+          <PortalProvider>
             <SafeAreaView style={styles.SafeAreaViewStyle}>
               <View style={styles.container}>
                 <AnimatedPressable
@@ -256,8 +256,8 @@ const App = () => {
                 </AnimatedPressable>
               </View>
             </SafeAreaView>
-          </GestureHandlerRootView>
-        </PortalProvider>
+          </PortalProvider>
+        </GestureHandlerRootView>
       </>
     );
   }

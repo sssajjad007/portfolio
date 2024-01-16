@@ -1,4 +1,4 @@
-import { Dimensions, StyleSheet, TouchableOpacity, View } from "react-native";
+import { StyleSheet, TouchableOpacity, View } from "react-native";
 import React, { useEffect, useState } from "react";
 import Animated, {
   useSharedValue,
@@ -13,11 +13,9 @@ import CircleAnimation from "./CircleAnimation";
 import OnboardModal from "./Modal";
 import { Portal } from "@gorhom/portal";
 import { useWebMediaQueries } from "./useWebMediaQueries";
-import RenderHTML from "react-native-render-html";
-import { ImageComponent } from "./Image";
+import { Content } from "./Content";
 
 const VIEW_SIZE = 56;
-const USER_IMG_WIDTH = 40;
 
 const Circle = ({
   user,
@@ -71,12 +69,7 @@ const Circle = ({
       opacity,
     };
   });
-  const contentAnimatedStyle = useAnimatedStyle(() => {
-    let opacity = interpolate(showName.value, [0, 1], [0, 1]);
-    return {
-      opacity,
-    };
-  });
+
   const openedModal = () => {
     const withSpringOpt = { mass: 2, stiffness: 80, damping: index + 1 * 15 };
     const withSpring2Opt = { stiffness: 100, mass: 3 };
@@ -108,9 +101,7 @@ const Circle = ({
     showName.value = withTiming(0, { duration: 100 });
   };
   const { isMobile } = useWebMediaQueries();
-  const source = {
-    html: `${user.description}`,
-  };
+
   useEffect(() => {
     if (open) {
       openedModal();
@@ -121,7 +112,7 @@ const Circle = ({
 
   return (
     <>
-      {isMobile && selected && (
+      {/* {isMobile && selected && (
         <Portal>
           <OnboardModal
             openModal={openOnboardModal}
@@ -130,13 +121,14 @@ const Circle = ({
             setOpenSignModal={setOpenSignModal}
           />
         </Portal>
-      )}
+      )} */}
       <PanGestureHandler onGestureEvent={onGestureEvent}>
         <TouchableOpacity
+          // disabled={!open}
           onPress={() => {
-            selectCard(user.id);
-            setOpenOnboardModal((t) => !t);
-            setOpenSignModal((t) => !t);
+            if (open) {
+              selectCard(user.id);
+            }
           }}
           activeOpacity={1}
         >
@@ -162,22 +154,7 @@ const Circle = ({
           </Animated.View>
         </TouchableOpacity>
       </PanGestureHandler>
-      {selected && (
-        <Animated.View style={[styles.contentContainer, contentAnimatedStyle]}>
-          <RenderHTML
-            contentWidth={200}
-            baseStyle={{
-              fontSize: 16,
-              lineHeight: 24,
-              paddingHorizontal: 16,
-              color: "white",
-            }}
-            allowedStyles={["fontFamily"]}
-            source={source}
-          />
-          <ImageComponent images={user.images || []} />
-        </Animated.View>
-      )}
+      {!isMobile && selected && <Content showName={showName} user={user} />}
     </>
   );
 };
@@ -216,15 +193,5 @@ const styles = StyleSheet.create({
     position: "absolute",
     justifyContent: "space-between",
     flexDirection: "column",
-  },
-  contentContainer: {
-    width: "64%",
-    height: Dimensions.get("window").height - 100,
-    position: "absolute",
-    top: 100,
-    left: 366,
-    backgroundColor: "black",
-    borderRadius: 20,
-    padding: 20,
   },
 });
