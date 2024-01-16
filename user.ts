@@ -102,7 +102,15 @@ export const users: IUser[] = [
     id: 6,
     name: "Vendo",
     role: "Delino",
-    description: ``,
+    description: `<h1>React Native Developer / Delino</h1>
+    <p>Vendo Application: online food ordering and delivery platform.</p>
+    <h3>Development Details:</h3>
+    <ul>
+      <li>Develop high performance app for android & ios</li>
+      <li>Base on monorepo for sharing codes with web</li>
+      <li>Fully custom component/li>
+      <li>Library: React Native Navigation, Redux ,Reanimated, Gesture Handler, Axios, Map, Web View</li>
+    </ul>`,
     uri: require("./assets/users/vendo.png"),
     images: [
       require("./assets/users/vendo1.jpg"),

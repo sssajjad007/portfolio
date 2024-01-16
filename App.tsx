@@ -222,10 +222,9 @@ const App = () => {
                 >
                   <CloseIcon />
                 </AnimatedPressable>
-                <Text style={styles.companyText}>Company Details</Text>
+                {/* <Text style={styles.companyText}>Company Details</Text> */}
                 <CompanyCard />
 
-                <Text style={[styles.commonTextStyle]}>Members</Text>
                 <Animated.View style={[styles.circle, circleAnimatedStyle]}>
                   {data &&
                     data.map((d, i) => (
