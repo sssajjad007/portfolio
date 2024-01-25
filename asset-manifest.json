@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/static/js/main.b9be8925.js",
-    "static/js/946.8df528b9.js": "/static/js/946.8df528b9.js",
-    "static/media/ketabkhan4.png": "/static/media/ketabkhan4.577ffd535e0bcb981d41.png",
-    "static/media/ketabkhan3.png": "/static/media/ketabkhan3.f12466d960db3aaa1499.png",
-    "static/media/ketabkhan2.png": "/static/media/ketabkhan2.f5487c0b718537aaf115.png",
+    "main.js": "/static/js/main.7d481ec3.js",
+    "static/js/899.d58ede0e.js": "/static/js/899.d58ede0e.js",
     "static/media/vendo4.jpg": "/static/media/vendo4.896897d918ff5cfa303e.jpg",
     "static/media/vendo5.jpg": "/static/media/vendo5.19e527add9c34734a65d.jpg",
     "static/media/vendo3.jpg": "/static/media/vendo3.45ec10f07224c5106fdd.jpg",
     "static/media/vendo2.jpg": "/static/media/vendo2.29dc0b0ba62e21fd5961.jpg",
+    "static/media/ketabkhan4.png": "/static/media/ketabkhan4.fe67253dc608a4d57834.png",
     "static/media/taskyn4.png": "/static/media/taskyn4.c499bf00145037bcd547.png",
     "static/media/vendo1.jpg": "/static/media/vendo1.52405e03e9a9778a641c.jpg",
+    "static/media/ketabkhan2.png": "/static/media/ketabkhan2.2f0024f1fabda3c2586f.png",
     "static/media/taskyn1.png": "/static/media/taskyn1.b6be4af73058ca366e9e.png",
     "static/media/taskyn8.png": "/static/media/taskyn8.5fd44a580f43af6cfcd2.png",
+    "static/media/ketabkhan3.png": "/static/media/ketabkhan3.599df86901270e6c5cf4.png",
     "static/media/courier3.jpg": "/static/media/courier3.0c4961b454200b2d26c7.jpg",
     "static/media/Montserrat-SemiBold.ttf": "/static/media/Montserrat-SemiBold.d5e0cc788cba9ced1fb9.ttf",
     "static/media/Montserrat-Regular.ttf": "/static/media/Montserrat-Regular.ceb11275ab638627a643.ttf",
@@ -61,11 +61,11 @@
     "favicon-16.png": "/favicon-16.png",
     "manifest.json": "/manifest.json",
     "serve.json": "/serve.json",
-    "main.b9be8925.js.map": "/static/js/main.b9be8925.js.map",
-    "946.8df528b9.js.map": "/static/js/946.8df528b9.js.map"
+    "main.7d481ec3.js.map": "/static/js/main.7d481ec3.js.map",
+    "899.d58ede0e.js.map": "/static/js/899.d58ede0e.js.map"
   },
   "entrypoints": [
-    "static/js/946.8df528b9.js",
-    "static/js/main.b9be8925.js"
+    "static/js/899.d58ede0e.js",
+    "static/js/main.7d481ec3.js"
   ]
 }
