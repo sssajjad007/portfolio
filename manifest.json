@@ -1,0 +1,9 @@
+{
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "lang": "en",
+  "name": "Reactive-4Twiggers-Animation",
+  "short_name": "Reactive-4Twiggers-Animation",
+  "start_url": "/?utm_source=web_app_manifest",
+  "orientation": "portrait"
+}
