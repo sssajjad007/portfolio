@@ -10,8 +10,8 @@ import Animated, {
 } from "react-native-reanimated";
 import { PanGestureHandler } from "react-native-gesture-handler";
 import CircleAnimation from "./CircleAnimation";
-import OnboardModal from "./Modal";
-import { Portal } from "@gorhom/portal";
+// import OnboardModal from "./Modal";
+// import { Portal } from "@gorhom/portal";
 import { useWebMediaQueries } from "./useWebMediaQueries";
 import { Content } from "./Content";
 
@@ -33,8 +33,8 @@ const Circle = ({
   const LeftValue = useSharedValue(0);
   const topValue = useSharedValue(0);
   const showName = useSharedValue(0);
-  const [openOnboardModal, setOpenOnboardModal] = useState(false);
-  const [openSignModal, setOpenSignModal] = useState(false);
+  // const [openOnboardModal, setOpenOnboardModal] = useState(false);
+  // const [openSignModal, setOpenSignModal] = useState(false);
   const circleAnimatedStyle = useAnimatedStyle(() => {
     const rotateValue = Math.ceil(rotate.value);
     const value = Math.sign(rotateValue);

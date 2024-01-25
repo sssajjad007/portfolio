@@ -24,7 +24,6 @@ import { users } from "./user";
 import Circle from "./components/Circle";
 import { ArrowDown, CloseIcon } from "./components/icons";
 import CompanyCard from "./components/CompanyCard";
-import { PortalProvider } from "@gorhom/portal";
 
 export const { width, height } = Dimensions.get("screen");
 console.log("🚀 ~ file: App.tsx:29 ~ height:", height);
@@ -213,49 +212,47 @@ const App = () => {
             flex: 1,
           }}
         >
-          <PortalProvider>
-            <SafeAreaView style={styles.SafeAreaViewStyle}>
-              <View style={styles.container}>
-                <AnimatedPressable
-                  onPress={closeModal}
-                  style={[styles.closeButton, closeIconAnimatedStyle]}
-                >
-                  <CloseIcon />
-                </AnimatedPressable>
-                {/* <Text style={styles.companyText}>Company Details</Text> */}
-                <CompanyCard />
+          <SafeAreaView style={styles.SafeAreaViewStyle}>
+            <View style={styles.container}>
+              <AnimatedPressable
+                onPress={closeModal}
+                style={[styles.closeButton, closeIconAnimatedStyle]}
+              >
+                <CloseIcon />
+              </AnimatedPressable>
+              {/* <Text style={styles.companyText}>Company Details</Text> */}
+              <CompanyCard />
 
-                <Animated.View style={[styles.circle, circleAnimatedStyle]}>
-                  {data &&
-                    data.map((d, i) => (
-                      <Circle
-                        index={i}
-                        user={d}
-                        key={d.id}
-                        uri={d.uri}
-                        open={open}
-                        radius={RADIUS}
-                        rotate={rotate}
-                        top={d.top - VIEW_SIZE / 2}
-                        left={d.left - VIEW_SIZE / 2}
-                        onGestureEvent={onGestureEvent}
-                        selected={activeIndex === d.id}
-                        selectCard={selectCard}
-                      />
-                    ))}
-                </Animated.View>
+              <Animated.View style={[styles.circle, circleAnimatedStyle]}>
+                {data &&
+                  data.map((d, i) => (
+                    <Circle
+                      index={i}
+                      user={d}
+                      key={d.id}
+                      uri={d.uri}
+                      open={open}
+                      radius={RADIUS}
+                      rotate={rotate}
+                      top={d.top - VIEW_SIZE / 2}
+                      left={d.left - VIEW_SIZE / 2}
+                      onGestureEvent={onGestureEvent}
+                      selected={activeIndex === d.id}
+                      selectCard={selectCard}
+                    />
+                  ))}
+              </Animated.View>
 
-                <AnimatedPressable
-                  style={[styles.arrowStyle, buttonAnimatedStyle]}
-                  disabled={disable}
-                  onPress={showUsersList}
-                >
-                  <Text style={styles.bottomText}>Full List</Text>
-                  <ArrowDown />
-                </AnimatedPressable>
-              </View>
-            </SafeAreaView>
-          </PortalProvider>
+              <AnimatedPressable
+                style={[styles.arrowStyle, buttonAnimatedStyle]}
+                disabled={disable}
+                onPress={showUsersList}
+              >
+                <Text style={styles.bottomText}>Full List</Text>
+                <ArrowDown />
+              </AnimatedPressable>
+            </View>
+          </SafeAreaView>
         </GestureHandlerRootView>
       </>
     );

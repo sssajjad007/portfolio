@@ -1,17 +1,9 @@
 import React, { useState } from "react";
-import { ScrollView, StyleSheet, TouchableOpacity } from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
 import { width } from "../App";
-import Animated, {
-  useAnimatedStyle,
-  useSharedValue,
-  withTiming,
-} from "react-native-reanimated";
-
+import { Image } from "expo-image";
 export const ImageComponent = ({
   images,
-  showImageModal,
-  setShowImageModal,
-  layout,
 }: {
   images: string[];
   showImageModal: boolean;
@@ -63,7 +55,7 @@ export const ImageComponent = ({
         //     animationHandler(image);
         //   }}
         // >
-        <Animated.View
+        <View
           key={image}
           style={[
             styles.imageContainer,
@@ -74,14 +66,15 @@ export const ImageComponent = ({
             // },
           ]}
         >
-          <Animated.Image
+          <Image
             style={styles.image}
-            resizeMode={"stretch"}
+            contentFit="fill"
+            transition={500}
             source={{
               uri: image,
             }}
           />
-        </Animated.View>
+        </View>
         // </TouchableOpacity>
       ))}
     </ScrollView>

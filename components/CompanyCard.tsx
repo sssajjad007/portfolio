@@ -1,46 +1,43 @@
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
-import { Dimensions, Image, StyleSheet, Text, View } from "react-native";
-
-const { width } = Dimensions.get("window");
+import {
+  Dimensions,
+  Image,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 import { LogoSvg } from "./icons";
 import RenderHTML from "react-native-render-html";
-
+import { useWebMediaQueries } from "./useWebMediaQueries";
 const LOGO_HALF_WIDTH = 54;
-
-{
-  /* <ul>
-<li>Strong proficiency in <strong>React Native</strong>, <strong>JavaScript</strong>, <strong>TypeScript</strong>, <strong>Expo</strong>, and related libraries/frameworks</li>
-<li>In-depth knowledge of mobile <strong>UI/UX design principles</strong> and best practices</li>
-<li>Theoretical and practical skill with <strong>OOP</strong>, <strong>RESTful API</strong>, design patterns, architectural patterns relevant to my field</li>
-<li>Experience with <strong>Mobile Debugging tools</strong>, <strong>firebase</strong>, <strong>sentry</strong></li>
-<li>E2E testing with <strong>Maestro</strong></li>
-<li>Experience working with <strong>Animations library</strong> like <strong>Reanimated</strong>, <strong>Skia</strong>, <strong>Rive</strong>, and <strong>lottie</strong></li>
-<li>Familiar with <strong>Kotlin/Native</strong> and <strong>Android Studio</strong>, <strong>Xcode</strong>, <strong>gradle</strong></li>
-<li>Solid understanding of software development lifecycle and agile methodologies</li>
-<li><strong>Azure</strong>, <strong>Jira</strong>, <strong>Github</strong>, <strong>Gitlab</strong></li>
-</ul> */
-}
 
 const source = {
   html: `
-<p> Highly skilled and dedicated React Native Developer with 4 years of experience in developing high performance and
-user-friendly mobile applications. My strong motivation and creative mindset enable me to approach challenges with
-innovative solutions, while my passion for learning ensures I stay up-to-date with the latest industry trends and
-technologies.
-Seeking a challenging role as a React Native Developer to contribute my expertise and drive innovation in a dynamic
-software development team.</p>
-<p>
-Email: <a href="mailto:sssajjad.76@gmail.com">sssajjad.76@gmail.com</a>
-<br>
-LinkedIn: <a href="https://www.linkedin.com/in/sajjad-seyfollah">www.linkedin.com/in/sajjad-seyfollah</a>
-<br>
-GitHub: <a href="https://github.com/sssajjad007">https://github.com/sssajjad007</a>
-</p>
+  <p>
+    Highly skilled and dedicated React Native Developer with 4 years of experience in developing high performance and
+    user-friendly mobile applications. My strong motivation and creative mindset enable me to approach challenges with
+    innovative solutions, while my passion for learning ensures I stay up-to-date with the latest industry trends and
+    technologies.
+  </p>
+  <p>
+    Seeking a challenging role as a React Native Developer to contribute my expertise and drive innovation in a dynamic
+    software development team.
+  </p>
+  <p>
+    Email: <a href="mailto:sssajjad.76@gmail.com">sssajjad.76@gmail.com</a>
+    <br>
+    LinkedIn: <a href="https://www.linkedin.com/in/sajjad-seyfollah">www.linkedin.com/in/sajjad-seyfollah</a>
+    <br>
+    GitHub: <a href="https://github.com/sssajjad007">https://github.com/sssajjad007</a>
+  </p>
   `,
 };
 
 const CompanyCard = () => {
+  const { isMobile } = useWebMediaQueries();
+
   return (
     <>
       <LinearGradient
@@ -50,7 +47,7 @@ const CompanyCard = () => {
         style={styles.linearStyle}
       />
 
-      <View style={styles.cardContainer}>
+      <View style={[styles.cardContainer, { height: isMobile ? 410 : 310 }]}>
         <View
           style={{
             width: 104,
@@ -81,7 +78,7 @@ const CompanyCard = () => {
 
         <Text style={styles.textStyle}></Text>
 
-        <View style={{ paddingHorizontal: 24 }}>
+        <ScrollView style={{ paddingHorizontal: 24 }}>
           <RenderHTML
             contentWidth={200}
             baseStyle={{
@@ -93,7 +90,7 @@ const CompanyCard = () => {
             allowedStyles={["fontFamily"]}
             source={source}
           />
-        </View>
+        </ScrollView>
       </View>
     </>
   );

@@ -56,7 +56,7 @@ export function Content(props: ContentProps) {
         setLayout({ height, width });
       }}
     >
-      <Animated.View >
+      <Animated.View>
         <RenderHTML
           contentWidth={200}
           baseStyle={{

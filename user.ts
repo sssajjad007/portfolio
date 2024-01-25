@@ -14,6 +14,13 @@ export const users: IUser[] = [
     description: `<h1>React Native Developer / Alopeyk</h1>
     <p>Alopeyk is a technology company that provides on-demand delivery services. It is the first and largest provider of on-demand delivery services in Iran.</p>
     <p>Store: <a href="https://cafebazaar.ir/app/com.alopeyk.courier">Cafebazaar Link</a></p>
+    <h3>Development Details:</h3>
+    <ul>
+    <li>Updated React Native version from 0.66 to 0.72, implementing necessary modifications.</li>
+    <li>Conducted updates for outdated packages and enhanced performance.</li>
+    <li>Completely restructured the project using TypeScript, incorporating type safety and improved maintainability.</li>
+    <li>Introduced new features and resolved numerous bugs.</li>
+  </ul>
     `,
     uri: require("./assets/users/courier.png"),
     images: [
@@ -30,6 +37,18 @@ export const users: IUser[] = [
     name: "Customer",
     role: "Alopeyk",
     uri: require("./assets/users/customer.png"),
+    description: `<h1>React Native Developer / Alopeyk</h1>
+    <p>Alopeyk is a technology company that provides on-demand delivery services. It is the first and largest provider of on-demand delivery services in Iran.</p>
+    <p>Store: <a href="https://cafebazaar.ir/app/com.alopeyk.customer">Cafebazaar Link</a></p>
+    <p>Store: <a href="https://sibapp.com/applications/alopeyk">Sibapp Link</a></p>
+    <h3>Development Details:</h3>
+    `,
+    images: [
+      require("./assets/users/customer1.jpeg"),
+      require("./assets/users/customer2.jpeg"),
+      require("./assets/users/customer3.jpeg"),
+      require("./assets/users/customer4.jpeg"),
+    ],
   },
   {
     id: 3,
@@ -124,7 +143,7 @@ export const users: IUser[] = [
     id: 7,
     name: "Denj",
     role: "Karafs",
-    description: `<h2>React Native Developer / Denj</h2>
+    description: `<h1>React Native Developer / Denj</h1>
     <p>Development of the new version of the Denj application as a freelancer</p>
     <p>Store: <a href="https://play.google.com/store/apps/details?id=com.denjapp.android">Denj App on Google Play Store</a></p>
     <h3>Development Details:</h3>
